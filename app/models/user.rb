@@ -9,4 +9,7 @@ class User < ApplicationRecord
     first_name_changed?
   end
   has_many :categories, dependent: :destroy
+  def is_admin?
+   return true if self.role =="admin"
+  end
 end
