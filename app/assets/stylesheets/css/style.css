@@ -3898,7 +3898,7 @@ left: 0;
      position: absolute;
      background: #4776E6;
      background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
-     background: linear-gradient(to right, #8E54E9, #4776e6d6);
+     background: linear-gradient(to right, #8E54E9, #4776E6);
      top: 0px;
      bottom: 0px;
      left: 0px;
@@ -5216,7 +5216,7 @@ width: 100%;
     width: 100%;
     background: #005C97;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #363795, #005C97);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, rgba(54, 55, 149, 0.8901960784313725), #005c9794); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(54, 55, 149, 0.8901960784313725), #005C97); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .h2-hero-inn{
     position: relative;
