@@ -639,10 +639,10 @@
      font-size: 13px;
 }
  .sprite-android{
-     background: url(/assets/sprite.png) no-repeat -12px -15px;
+     background: url("<%= asset_path("sprite.png") %>") no-repeat -12px -15px;
 }
  .sprite-ios{
-     background: url(/assets/sprite.png) no-repeat -170px -15px;
+     background: url("<%= asset_path("sprite.png") %>") no-repeat -170px -15px;
 }
  .sprite{
      width: 157px;
@@ -1313,15 +1313,15 @@
      background: linear-gradient(to top, rgba(3, 41, 79, 0.82), rgba(6, 53, 98, 0.62));
 }
  .ho-ev-latest-bg-1{
-     background: url(/assets/ev-bg1.jpg) no-repeat;
+     background: url("<%= asset_path("ev-bg1.jpg")%>") no-repeat;
      background-size: cover;
 }
  .ho-ev-latest-bg-2{
-     background: url(/assets/ev-bg2.jpg) no-repeat;
+     background: url("<%= asset_path("ev-bg2.jpg")%>") no-repeat;
      background-size: cover;
 }
  .ho-ev-latest-bg-3{
-     background: url(/assets/ev-bg.jpg) no-repeat;
+     background: url("<%= asset_path("ev-bg.jpg")%>") no-repeat;
      background-size: cover;
      margin-bottom: 0px;
      border-bottom-left-radius: 0px;
