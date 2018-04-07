@@ -10,10 +10,9 @@ class ApplicationController < ActionController::Base
   end
   
 
-  def authentication_admin!
-    unless current_user.is_admin?
-      flash[:alert] = "You are not authorized to perform this action."
-      redirect_to(request.referrer || root_path)
+  def authenticate_admin!
+    if is_namespace_admin
+      return redirect_to root_path, alert: "Unauthorized Access" if (!(current_user && current_user.is_admin?))
     end
   end
   protected

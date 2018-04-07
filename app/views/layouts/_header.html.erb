@@ -19,7 +19,7 @@
                 <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete%>
                 </li>
               <% else %>
-                <li><a href="#!" data-toggle="modal" data-target="#modal1">Sign In</a>
+                <li><a href="users/sign_in" data-toggle="modal" data-target="#modal1">Sign In</a>
                 </li>
                 <li><a href="#!" data-toggle="modal" data-target="#modal2">Sign Up</a>
                 </li>
@@ -191,7 +191,7 @@
                       <div class="mm1-com mm1-cour-com mm1-s3">
                         <h4>Admin panel:1</h4>
                         <ul>
-                          <li><a href="admin.html">admin</a></li>
+                          <li><a href="/admin">admin</a></li>
                           <li><a href="admin-add-courses.html">Add new course</a></li>
                           <li><a href="admin-all-courses.html">All courses</a></li>
                           <li><a href="admin-student-details.html">Student details</a></li>

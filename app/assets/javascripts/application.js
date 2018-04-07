@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery-ui
 //= require rails-ujs
-//= require turbolinks
 //= require js/main.min
 //= require js/bootstrap.min
 //= require js/materialize.min
