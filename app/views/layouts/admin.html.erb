@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EEducation Master Template</title>
+    <%= csrf_meta_tags %>
+    <!-- META TAGS -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EEducation master is one of the best eEducational html template, it's suitable for all eEducation websites like university,college,school,online eEducation,tution center,distance eEducation,computer eEducation">
+    <meta name="keyword" content="eEducation html template, university template, college template, school template, online eEducation template, tution center template">
+    <!-- FAV ICON(BROWSER TAB ICON) -->
+    <link rel="shortcut icon" href="/assets/fav.ico" type="image/x-icon">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700%7CJosefin+Sans:600,700" rel="stylesheet">
+    <!-- FONTAWESOME ICONS -->
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <!-- ALL CSS FILES -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!--== MAIN CONTRAINER ==-->
+    <%= render partial: "layouts/admin_header"%>
+    <!--== BODY CONTNAINER ==-->
+    <div class="container-fluid sb2">
+      <div class="row">
+        <%= render partial: "layouts/admin_left"%>
+        <!--== BODY INNER CONTAINER ==-->
+        <div class="sb2-2">
+          <!--== breadcrumbs ==-->
+          <div class="sb2-2-2">
+            <ul>
+              <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+              </li>
+              <li class="active-bre"><a href="#"> Dashboard</a>
+              </li>
+              <li class="page-back"><a href="/"><i class="fa fa-backward" aria-hidden="true"></i> Back</a>
+              </li>
+            </ul>
+          </div>
+          <!--== DASHBOARD INFO ==-->
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

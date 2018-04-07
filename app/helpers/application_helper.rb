@@ -11,6 +11,6 @@ module ApplicationHelper
     !is_namespace_admin
   end
   def set_layout
-   is_namespace_admin ? "application" : "application"
+   is_namespace_admin ? "admin" : "application"
   end
 end
