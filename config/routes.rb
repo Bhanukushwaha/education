@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :articles
   end
+  match '/auth/:provider/callback', :to => 'home#create', via: [:get, :post]
+  match '/auth/failure', :to => 'home#failure', via: [:get, :post]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

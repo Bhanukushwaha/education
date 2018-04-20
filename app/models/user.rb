@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   extend FriendlyId
   friendly_id :first_name, use: [:slugged, :finders]
+  has_many :authentications, dependent: :destroy
+  before_create :confirmation_token
+  validates :email, :uniqueness => {:allow_blank => true}
   def should_generate_new_friendly_id?
     first_name_changed?
   end

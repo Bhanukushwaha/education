@@ -56,3 +56,14 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise"
 gem 'friendly_id'
+gem "oauth"
+gem "oauth2"
+gem 'omniauth-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin'
+gem 'omniauth-github'
+gem 'omniauth-pinterest'
+gem 'omniauth-instagram'
+gem 'figaro'
