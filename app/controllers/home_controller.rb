@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   end
 
   def blog
-    
+    @blogs = Blog.all
   end
   def create
     user = Authentication.from_omniauth(request.env["omniauth.auth"])
