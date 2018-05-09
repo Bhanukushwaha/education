@@ -1,5 +1,18 @@
 class HomeController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
+  end
+
+  def contact
+  end
+
+  def send_email
+    UserMailer.send_email(params[:contact]).deliver_now
+    redirect_to root_path
+  end
+
+  def blog
+    
   end
   def create
     user = Authentication.from_omniauth(request.env["omniauth.auth"])

@@ -6,6 +6,7 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :first_name, use: [:slugged, :finders]
   has_many :authentications, dependent: :destroy
+  has_many :reviews
   before_create :confirmation_token
   validates :email, :uniqueness => {:allow_blank => true}
   def should_generate_new_friendly_id?

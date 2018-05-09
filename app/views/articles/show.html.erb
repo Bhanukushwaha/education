@@ -9,6 +9,35 @@
   <strong>Name:</strong>
   <%= @article.name %>
 </p>
-
+<h4>Review</h4>
+<% Review.where(:article_id => @article.id).each do |review| %>
+	<p>
+	  <strong>Title:</strong>
+	  <%= review.title %>
+	</p>
+  <% if !Like.where(:likeable_id=>review.id, :user_id=>current_user.id).present? %>
+    <%= form_tag '/like', :method => 'get' do %>
+      <%= hidden_field_tag "likeable_id" ,nil ,:value => review.id %>
+      <p>
+      <%= submit_tag "like(#{Like.where(:likeable_id=> review.id).count})", :name => nil %>
+      </p>
+    <% end %>
+  <% else %>
+    <%= form_tag '/dislike', :method => 'get' do %>
+      <%= hidden_field_tag "likeable_id" ,nil ,:value => review.id %>
+      <p>
+        <%= submit_tag "unlike(#{Like.where(:likeable_id=> review.id).count})", :name => nil %>
+      </p>
+    <% end %>
+  <% end %>
+<% end %>
+<%= form_tag '/review', :method => 'get' do %>
+	<%= hidden_field_tag "article_id" ,nil, value:  @article.id %>
+  <%= hidden_field_tag "user_id" ,nil, value:  current_user.id %>
+	<p>
+    <%= text_field_tag :title %>
+    <%= submit_tag "Post", :name => nil %>
+  </p> 
+<% end %>
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>

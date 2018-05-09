@@ -13,4 +13,16 @@ module ApplicationHelper
   def set_layout
    is_namespace_admin ? "admin" : "application"
   end
+  def define_admin_routes(data)
+    begin
+      resourceName = data[:resourceName]
+      objectId = data[:objectId]
+      object = resourceName.classify.constantize.first
+      object_id = objectId ? objectId : object ? object.id : nil
+      route_name = resourceName.tableize
+      object ? "/admin/#{route_name}/#{object_id}" : "/admin/#{route_name}/new" 
+    rescue 
+      "#"
+    end
+  end
 end
