@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /blogs/1
@@ -56,7 +56,7 @@ class BlogsController < ApplicationController
   def destroy
     @blog.destroy
     respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
+      format.html { redirect_to define_admin_routes({resourceName: 'Blog'}), notice: 'Blog was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -2,7 +2,7 @@
 
 <h1>Blogs</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -27,5 +27,7 @@
 </table>
 
 <br>
-
+<div class="pull-right">
+  <%= will_paginate @blogs, renderer: BootstrapPagination::Rails %>
+</div>
 <%= link_to 'New Blog', new_admin_blog_path %>

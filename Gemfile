@@ -68,3 +68,4 @@ gem 'omniauth-pinterest'
 gem 'omniauth-instagram'
 gem 'figaro'
 gem 'carrierwave'
+gem "will_paginate-bootstrap"
