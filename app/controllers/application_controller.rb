@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   layout :set_layout
   before_action :configure_permitted_parameters, if: :devise_controller?
+  helper_method :resource_name, :resource, :devise_mapping, :resource_class
+  
   def after_sign_in_path_for(resource)
     resource.is_admin? ? admin_root_path : root_path
   end
@@ -14,6 +16,22 @@ class ApplicationController < ActionController::Base
     if is_namespace_admin
       return redirect_to root_path, alert: "Unauthorized Access" if (!(current_user && current_user.is_admin?))
     end
+  end
+
+  def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def resource_class
+    User
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
   end
   protected
   def configure_permitted_parameters

@@ -40,11 +40,11 @@
             <p>Don't have an account? Create your account. It's take less then a minutes</p>
             <h4>Login with social media</h4>
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+              <li><a href="/auth/facebook"><i class="fa fa-facebook"></i> Facebook</a>
               </li>
               <li><a href="#"><i class="fa fa-google"></i> Google+</a>
               </li>
-              <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+              <li><a href="/auth/twitter"><i class="fa fa-twitter"></i> Twitter</a>
               </li>
             </ul>
           </div>
@@ -53,23 +53,23 @@
             </a>
             <h4>Login</h4>
             <p>Don't have an account? Create your account. It's take less then a minutes</p>
-            <form class="s12">
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: "s12"}) do |f| %>
               <div>
                 <div class="input-field s12">
-                  <input type="text" data-ng-model="name" class="validate">
+                  <input type="email" name="user[email]" id="user_email" data-ng-model="name" class="validate">
                   <label>User name</label>
                 </div>
               </div>
               <div>
                 <div class="input-field s12">
-                  <input type="password" class="validate">
+                  <input type="password" name="user[password]" id="user_password" class="validate">
                   <label>Password</label>
                 </div>
               </div>
               <div>
                 <div class="s12 log-ch-bx">
                   <p>
-                    <input type="checkbox" id="test5" />
+                    <%= f.check_box :remember_me, id: "test5" %>
                     <label for="test5">Remember me</label>
                   </p>
                 </div>
@@ -82,7 +82,7 @@
               <div>
                 <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal3">Forgot password</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
               </div>
-            </form>
+            <% end %>
           </div>
         </div>
       </div>
@@ -94,11 +94,11 @@
             <p>Don't have an account? Create your account. It's take less then a minutes</p>
             <h4>Login with social media</h4>
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+              <li><a href="/auth/facebook"><i class="fa fa-facebook"></i> Facebook</a>
               </li>
               <li><a href="#"><i class="fa fa-google"></i> Google+</a>
               </li>
-              <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+              <li><a href="/auth/twitter"><i class="fa fa-twitter"></i> Twitter</a>
               </li>
             </ul>
           </div>
@@ -107,28 +107,34 @@
             </a>
             <h4>Create an Account</h4>
             <p>Don't have an account? Create your account. It's take less then a minutes</p>
-            <form class="s12">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {class: "s12"}) do |f| %>
               <div>
                 <div class="input-field s12">
-                  <input type="text" data-ng-model="name1" class="validate">
-                  <label>User name</label>
+                  <input type="text" name="user[first_name]" data-ng-model="name1" class="validate">
+                  <label>First name</label>
                 </div>
               </div>
               <div>
                 <div class="input-field s12">
-                  <input type="email" class="validate">
+                  <input type="text" name="user[last_name]" data-ng-model="name1" class="validate">
+                  <label>Last name</label>
+                </div>
+              </div>
+              <div>
+                <div class="input-field s12">
+                  <input type="email" name="user[email]" class="validate">
                   <label>Email id</label>
                 </div>
               </div>
               <div>
                 <div class="input-field s12">
-                  <input type="password" class="validate">
+                  <input type="password" name="user[password]" class="validate">
                   <label>Password</label>
                 </div>
               </div>
               <div>
                 <div class="input-field s12">
-                  <input type="password" class="validate">
+                  <input type="password" name="user[password_confirmation]" class="validate">
                   <label>Confirm password</label>
                 </div>
               </div>
@@ -140,7 +146,7 @@
               <div>
                 <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> </div>
               </div>
-            </form>
+            <% end %>
           </div>
         </div>
       </div>
@@ -152,11 +158,11 @@
             <p>Don't have an account? Create your account. It's take less then a minutes</p>
             <h4>Login with social media</h4>
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a>
+              <li><a href="/auth/facebook"><i class="fa fa-facebook"></i> Facebook</a>
               </li>
               <li><a href="#"><i class="fa fa-google"></i> Google+</a>
               </li>
-              <li><a href="#"><i class="fa fa-twitter"></i> Twitter</a>
+              <li><a href="/auth/twitter"><i class="fa fa-twitter"></i> Twitter</a>
               </li>
             </ul>
           </div>
@@ -165,10 +171,10 @@
             </a>
             <h4>Forgot password</h4>
             <p>Don't have an account? Create your account. It's take less then a minutes</p>
-            <form class="s12">
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "s12" }) do |f| %>
               <div>
                 <div class="input-field s12">
-                  <input type="text" data-ng-model="name3" class="validate">
+                  <input autofocus="autofocus" autocomplete="email" data-ng-model="name3" type="email" name="user[email]" id="user_email" class="validate">
                   <label>User name or email id</label>
                 </div>
               </div>
@@ -180,7 +186,7 @@
               <div>
                 <div class="input-field s12"> <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal1">Are you a already member ? Login</a> | <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal2">Create a new account</a> </div>
               </div>
-            </form>
+            <% end %>
           </div>
         </div>
       </div>
