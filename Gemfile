@@ -69,3 +69,4 @@ gem 'omniauth-instagram'
 gem 'figaro'
 gem 'carrierwave'
 gem "will_paginate-bootstrap"
+gem "paperclip", "~> 6.0.0"

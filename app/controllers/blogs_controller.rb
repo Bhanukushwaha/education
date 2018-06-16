@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
   # POST /blogs.json
   def create
     @blog = Blog.new(blog_params)
-
+    @blog.user_id = current_user.id
     respond_to do |format|
       if @blog.save
         format.html { redirect_to define_admin_routes({resourceName: 'Blog', objectId: @blog.id}), notice: 'Blog was successfully created.' }
