@@ -21,6 +21,27 @@ class UsersController < ApplicationController
   def edit
   end
 
+
+  def change_password
+    @user = current_user
+  end
+  def update_password
+    @user = current_user
+    unless @user.valid_password?(params[:user][:current_password])
+      @user.errors.add(:base, "Current Password is incorrect.")
+      return render "change_password"
+    end
+    if @user.update(user_params)
+      # Sign in the user by passing validation in case their password changed
+      bypass_sign_in(@user)
+      redirect_to root_path
+      #redirect_to destroy_user_session_path
+    else
+      render "change_password"
+    end
+  end
+
+  
   # POST /users
   # POST /users.json
   def create

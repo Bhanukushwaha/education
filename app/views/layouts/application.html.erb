@@ -28,6 +28,14 @@
     <%= render partial: "layouts/mobile"%>
     <!--HEADER SECTION-->
     <%= render partial: "layouts/header"%>
+      <div class="FlashNotice">
+        <% flash.each do |key, value| %>
+          <div class="<%= flash_class(key) %> fade in">
+            <a href="#" data-dismiss="alert" class="close">×</a>
+            <%= value %>
+          </div>
+        <% end %>
+      </div>
     <%= yield %>
     <%= render partial: "layouts/footer" %>
     <!--SECTION LOGIN, REGISTER AND FORGOT PASSWORD-->
@@ -56,7 +64,7 @@
             <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: "s12"}) do |f| %>
               <div>
                 <div class="input-field s12">
-                  <input type="email" name="user[email]" id="user_email" data-ng-model="name" class="validate">
+                  <input type="text" name="user[username]" id="user_username" data-ng-model="name" class="validate">
                   <label>User name</label>
                 </div>
               </div>
@@ -118,6 +126,12 @@
                 <div class="input-field s12">
                   <input type="text" name="user[last_name]" data-ng-model="name1" class="validate">
                   <label>Last name</label>
+                </div>
+              </div>
+              <div>
+                <div class="input-field s12">
+                  <input type="text" name="user[username]" data-ng-model="name1" class="validate">
+                  <label>User Name</label>
                 </div>
               </div>
               <div>
@@ -210,3 +224,10 @@
     
   </body>
 </html>
+
+
+<style>
+  .FlashNotice .alert{
+     margin-bottom: 0px;
+  }
+</style>

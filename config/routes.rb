@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get 'home/index'
   root "home#index"
   devise_for :users
-  resources :users
+  resources :users do
+    collection do
+      patch 'update_password'
+    end
+  end
+  get 'change_password' => "users#change_password"
   get 'review' => 'articles#review'
   get 'like' => 'reviews#like'
   get 'dislike' => 'reviews#dislike'
