@@ -8,7 +8,12 @@
             <ul>
               <li><a href="#">Contact: Lake Road, Suite 180 Farmington Hills, U.S.A.</a>
               </li>
-              <li><a href="#">Phone: +101-1231-1231</a>
+              <li><a href="#">Phone: +801-0624-218</a>
+              </li>
+              <li>
+                <% if current_user.present? %>
+                  <a href="">Owner:- <%= current_user.email %></a>
+                <% end %>
               </li>
             </ul>
           </div>
