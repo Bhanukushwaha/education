@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   end
   get 'home/index'
   root "home#index"
-  devise_for :users
-  resources :users do
+  devise_for :users, :controllers => {:confirmations => 'users/confirmations' }
+  resources :users, only: [:edit] do
     collection do
       patch 'update_password'
     end
@@ -30,5 +30,7 @@ Rails.application.routes.draw do
   end
   match '/auth/:provider/callback', :to => 'home#create', via: [:get, :post]
   match '/auth/failure', :to => 'home#failure', via: [:get, :post]
+  match "/404", :to => "errors#not_found", :via => :all
+  match "/500", :to => "errors#internal_server_error", :via => :all
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
