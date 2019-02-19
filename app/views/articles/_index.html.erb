@@ -1,3 +1,16 @@
+
+<%= social_share_button_tag("#{articles.title}") %>
+<div class="col-md-3">
+  <div class="share d-flex justify-content-md-right">
+    <a href="#social-share" class="btn btn-default2" data-toggle="collapse"><i class="fa fa-share"></i>  Share</a>
+  </div>
+  <br>
+  <div class="social-login-icons collapse" id="social-share">
+    <%= social_share_button_tag("#{articles.title}", url: request.url) %>
+  </div> 
+</div>
+<div>Icon made from <a href="http://www.onlinewebfonts.com/icon">Icon Fonts</a> is licensed by CC BY 3.0</div>
+
 <p>
   <strong>Title:</strong>
   <%= articles.title %>

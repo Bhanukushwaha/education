@@ -13,6 +13,8 @@ class User < ApplicationRecord
   validates :email, :uniqueness => {:allow_blank => true}
   validates :username, presence: :true, uniqueness: { case_sensitive: false }
   validate :validate_username
+  has_attached_file :image, styles: { cover: "1500x200>", thumb: "200x200>" }, default_url: "/missing-wide.png"
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   def should_generate_new_friendly_id?
     first_name_changed?
   end
