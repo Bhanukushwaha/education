@@ -71,4 +71,3 @@ gem 'carrierwave'
 gem "will_paginate-bootstrap"
 gem "paperclip", "~> 6.0.0"
 gem 'social-share-button'
-gem 'sitemap_generator'
