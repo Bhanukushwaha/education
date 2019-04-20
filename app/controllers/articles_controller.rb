@@ -36,8 +36,8 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        format.js
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.js {render :create}
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -64,7 +64,9 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1.json
   def destroy
     @article.destroy
+    @articles = Article.all
     respond_to do |format|
+      format.js
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
     end
