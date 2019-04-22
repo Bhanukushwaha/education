@@ -43,3 +43,8 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+<script>
+  function onSubmit(token) {
+    document.getElementById("new_user").submit();
+  }
+</script>

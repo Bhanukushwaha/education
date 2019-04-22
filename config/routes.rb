@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   get 'home/index'
   root "home#index"
-  devise_for :users, :controllers => {:confirmations => 'users/confirmations' }
+  devise_for :users, :controllers => {:confirmations => 'users/confirmations', :registrations => 'users/registrations' }
   resources :users, only: [:edit] do
     collection do
       patch 'update_password'
