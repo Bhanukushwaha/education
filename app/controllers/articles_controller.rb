@@ -35,7 +35,6 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     respond_to do |format|
-      byebug
       if verify_recaptcha(model: @article) && @article.save
         format.js
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
