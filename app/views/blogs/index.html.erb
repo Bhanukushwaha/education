@@ -16,7 +16,7 @@
     <% @blogs.each do |blog| %>
       <tr>
         <td><%= blog.title %></td>
-        <td><%= blog.description %></td>
+        <td><%= blog.description.try(:html_safe) %></td>
         <td><%= image_tag blog.image, height: "100", width: "100" %></td>
         <td><%= link_to 'Show', polymorphic_path([:admin,  blog]) %></td>
         <td><%= link_to 'Edit', edit_admin_blog_path(blog) %></td>

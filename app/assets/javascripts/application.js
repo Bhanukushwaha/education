@@ -17,6 +17,7 @@
 //= require js/bootstrap.min
 //= require js/materialize.min
 //= require js/custom
+//= require ckeditor-jquery
 setTimeout(function() {
   $('.FlashNotice').fadeOut('fast');
 }, 5000);

@@ -73,3 +73,5 @@ gem "paperclip", "~> 6.0.0"
 gem 'social-share-button'
 gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem "recaptcha", require: "recaptcha/rails"
+gem 'rqrcode-with-patches', '~> 0.5.4'
+gem 'ckeditor_rails'

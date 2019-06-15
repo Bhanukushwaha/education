@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description, id: :blog_description %>
+    <%= form.text_area :description, id: :blog_description, :class => 'ckeditor' %>
   </div>
 
   <div class="field">
@@ -46,6 +46,9 @@
 
   $("#imgInp").change(function(){
     readURL(this);
+  });
+  $('.ckeditor').ckeditor({
+  // optional config
   });
 </script>
 <style type="text/css">
