@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
@@ -76,3 +76,4 @@ gem "recaptcha", require: "recaptcha/rails"
 gem 'rqrcode-with-patches', '~> 0.5.4'
 gem 'ckeditor_rails'
 gem 'devise_invitable'
+gem 'country_state_select'

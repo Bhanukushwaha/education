@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, authentication_keys: [:login]
   attr_writer :login
+  attr_accessor :country_field, :state_field
+
   extend FriendlyId
   friendly_id :first_name, use: [:slugged, :finders]
   has_many :authentications, dependent: :destroy

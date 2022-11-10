@@ -18,6 +18,7 @@
 //= require js/materialize.min
 //= require js/custom
 //= require ckeditor-jquery
+//= require country_state_select
 setTimeout(function() {
   $('.FlashNotice').fadeOut('fast');
 }, 5000);
